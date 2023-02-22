@@ -1,0 +1,10 @@
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'https://chiragchaplot.com/beeftracker',
+});
+
+export const createRecord = (data) => api.post('/createRecord', { data });
+export const viewRecord = (id) => api.get(`/viewRecord/${id}`);
+export const editRecord = (id, data) => api.put(`/editRecord/${id}`, { data });
+export const syncRecords = () => api.get('/syncRecords');
